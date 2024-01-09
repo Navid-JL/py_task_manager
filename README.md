@@ -1,8 +1,14 @@
 # Project
 
-Project Description
+PyTaskManager is a lightweight task management application built with FastAPI, HTML, and Bootstrap 5. It allows users to manage their tasks by providing a user-friendly interface for adding, editing, and deleting tasks. The application utilizes an SQLite database to store task information, ensuring simplicity and ease of use.
 
-<em>[TODO.md spec & Kanban Board](https://bit.ly/3fCwKfM)</em>
+#### Key Features:
+
+-   Create, Read, Update, and Delete tasks seamlessly.
+-   View tasks with details such as title, description, and status.
+-   Filter tasks based on their status for better organization.
+-   Responsive and intuitive user interface powered by Bootstrap 5.
+    Efficient backend powered by FastAPI for quick API responses.
 
 ### Todo
 
