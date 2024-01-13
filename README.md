@@ -21,14 +21,14 @@ PyTaskManager is a lightweight task management application built with FastAPI, H
 -   [x] Define a Task table with columns for id, title, description, and status.
 -   [x] Create a main.py file for your FastAPI backend.
 -   [x] Define FastAPI app and connect to the SQLite database using the databases library.
--   [ ] Implement CRUD operations (Create, Read, Update, Delete) for tasks.
+-   [x] Implement CRUD operations (Create, Read, Update, Delete) for tasks.
 -   [ ] Create an index.html file in a templates folder.
 -   [ ] Design a simple interface using Bootstrap 5 for displaying tasks, adding new tasks, and editing existing tasks.
 -   [ ] Link your HTML file to the FastAPI backend.
 -   [ ] Use FastAPI's templates and static files support to render HTML and serve static assets.
 -   [ ] Test your CRUD operations by running the FastAPI development server (uvicorn main:app --reload).
 -   [ ] Use tools like curl or tools like HTTP Client extension to interact with your API.
--   [ ] Document your code, especially the API endpoints.
+-   [x] Document your code, especially the API endpoints.
 -   [ ] Provide instructions on how to run the project.
 
 ### In Progress
