@@ -3,10 +3,13 @@ from fastapi import FastAPI
 import uvicorn
 from api.models import product_model
 from api.database import engine
+from api.routers.product import router as product_router
 
 app = FastAPI(title="PyTaskManager")
 
 product_model.Base.metadata.create_all(engine)
+
+app.include_router(product_router, prefix="/product")
 
 logging.basicConfig(
     filename="./api/logs/app.log",
