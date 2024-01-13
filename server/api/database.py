@@ -1,19 +1,22 @@
-import sqlite3
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
-conn = sqlite3.connect('./data/tasks.db')
+SQLALCHEMY_DATABASE_URL = "sqlite:///./products.db"
+# SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
 
-cursor = conn.cursor()
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-create_task_table = '''
-CREATE TABLE IF NOT EXISTS tasks (
-    id INTEGER PRIMARY KEY,
-    title TEXT NOT NULL CHECK(length(title) <= 50),
-    description TEXT CHECK(length(description) <= 200),
-    is_completed BOOLEAN NOT NULL
-);
-'''
 
-cursor.execute(create_task_table)
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
-conn.commit()
-conn.close()
+
+Base = declarative_base()
